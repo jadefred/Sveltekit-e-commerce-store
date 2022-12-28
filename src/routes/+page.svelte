@@ -2,6 +2,6 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-</script>
 
-<h1>{data}</h1>
+	let allProducts = data.allProducts;
+</script>
