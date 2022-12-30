@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import type { IallProducts } from '../interface';
 
 	export let data: PageData;
 
-	let allProducts = data.allProducts;
-	console.log(allProducts[0]);
+	let allProducts: IallProducts[] = data.allProducts;
 </script>
 
 <div class="text-gray-700 bg-blue-50">
