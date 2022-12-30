@@ -8,4 +8,9 @@ interface IallProducts {
 	rating: { rate: number; count: number };
 }
 
-export type { IallProducts };
+interface IselectedProduct {
+	id: number;
+	quantity: number;
+}
+
+export type { IallProducts, IselectedProduct };
