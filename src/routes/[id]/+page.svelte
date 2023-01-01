@@ -32,6 +32,16 @@
 				return [...item, productInfo];
 			});
 		}
+		//display flash message
+		flashMessage();
+	}
+
+	//display flash massage for 3 seconds
+	function flashMessage() {
+		addedToCartMsg = true;
+		setTimeout(() => {
+			addedToCartMsg = false;
+		}, 3000);
 	}
 </script>
 
