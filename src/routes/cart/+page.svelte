@@ -2,14 +2,11 @@
 	//Types
 	import type { PageData } from './$types';
 	import type { IallProducts, IselectedProduct } from '../../interface';
-
-	//Store
+	import { priceFormatter } from '../../utilities';
 	import { selectedProducts } from '../../store';
 
-	//export
 	export let data: PageData;
 
-	//Variables
 	let products: IallProducts[] = data.allProducts;
 
 	//click to increase quantity - by id
@@ -55,12 +52,6 @@
 		}
 		return 0;
 	}
-
-	//reformat price and assign to a reactive variable
-	const priceFormatter = new Intl.NumberFormat('fr-FR', {
-		style: 'currency',
-		currency: 'EUR'
-	});
 
 	//sum of quantity of all items in store (selectedProducts)
 	$: totalQuantity = $selectedProducts.reduce((prev, curr) => prev + curr.quantity, 0);

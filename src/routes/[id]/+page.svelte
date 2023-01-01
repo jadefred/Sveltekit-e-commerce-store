@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { IallProducts } from '../../interface';
 	import { selectedProducts } from '../../store';
+	import { priceFormatter } from '../../utilities';
 
 	export let data: IallProducts;
 
@@ -59,7 +60,7 @@
 
 	<!-- price and add to cart button block -->
 	<div class="w-10/12 mx-auto flex justify-around items-center">
-		<p class="font-bold text-xl">Price : {oneProduct.price} €</p>
+		<p class="font-bold text-xl">Price : {priceFormatter.format(parseInt(oneProduct.price, 10))}</p>
 		<button
 			on:click={() => addToCart(oneProduct.id)}
 			class="font-bold text-xl bg-emerald-600 text-white py-2 px-4 rounded-lg hover:bg-emerald-700 transition"
