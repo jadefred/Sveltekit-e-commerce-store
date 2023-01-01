@@ -13,4 +13,10 @@ interface IselectedProduct {
 	quantity: number;
 }
 
-export type { IallProducts, IselectedProduct };
+interface Iorder {
+	userId: string;
+	date: string;
+	products: IselectedProduct[];
+}
+
+export type { IallProducts, IselectedProduct, Iorder };

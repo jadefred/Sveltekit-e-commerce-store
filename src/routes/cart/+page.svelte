@@ -4,6 +4,7 @@
 	import type { IallProducts, IselectedProduct } from '../../interface';
 	import { priceFormatter } from '../../utilities';
 	import { selectedProducts } from '../../store';
+	import DeliveryForm from './DeliveryForm.svelte';
 
 	export let data: PageData;
 
@@ -118,6 +119,8 @@
 				Total Price : <span class="font-semibold">{priceFormatter.format(totalPrice)}</span>
 			</p>
 		</div>
+
+		<DeliveryForm />
 	</div>
 {:else}
 	<div class="flex flex-col items-center gap-y-20">
