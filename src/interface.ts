@@ -19,4 +19,8 @@ interface Iorder {
 	products: IselectedProduct[];
 }
 
-export type { IallProducts, IselectedProduct, Iorder };
+interface Iconfirmation {
+	confirmId: string;
+}
+
+export type { IallProducts, IselectedProduct, Iorder, Iconfirmation };

@@ -60,8 +60,8 @@
 					});
 					if (serverErrorMsg) serverErrorMsg = false;
 					//redirect user to confirmation page
-					console.log(response.data.id)
-					window.location.href = "http://localhost:5173/"
+					const confirmation = response.data.id
+					window.location.href = `http://localhost:5173/cart/${confirmation}`
 				} catch (error) {
 					console.log(error);
 					serverErrorMsg = true;
@@ -73,7 +73,6 @@
 	function date() {
 		const newDate = new Date();
 		const dateObj = new Date(newDate.getTime());
-		const time = dateObj.toTimeString();
 
 		const year = newDate.getFullYear();
 		const month = newDate.getMonth() + 1;
