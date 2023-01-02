@@ -10,7 +10,7 @@
 <div class="text-gray-700 bg-blue-50">
 	<div class="w-11/12 mx-auto text-center">
 		<h1 class="text-3xl font-bold py-8">All Products</h1>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 justify-items-center">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 justify-items-center" data-cy="productCards">
 			<!-- display all products dynamically, each card is a clickable link which link to its url page -->
 			{#each allProducts as product}
 				<a
