@@ -55,7 +55,7 @@
 
 	<!-- make added to cart message visible after added product -->
 	<div class={`${addedToCartMsg ? 'text-sky-600 visible' : 'invisible'}`}>
-		Product has been added to the cart
+		<p data-cy="addToCartMsg">Product has been added to the cart</p>
 	</div>
 
 	<!-- price and add to cart button block -->
@@ -64,6 +64,7 @@
 		<button
 			on:click={() => addToCart(oneProduct.id)}
 			class="font-bold text-xl bg-emerald-600 text-white py-2 px-4 rounded-lg hover:bg-emerald-700 transition"
+			data-cy="addToCartBtn"
 			>Add to Cart</button
 		>
 	</div>

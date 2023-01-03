@@ -123,7 +123,7 @@
 		<DeliveryForm />
 	</div>
 {:else}
-	<div class="flex flex-col items-center gap-y-20">
+	<div class="flex flex-col items-center gap-y-20" data-cy="emptyCart">
 		<p class="text-xl">Empty Cart</p>
 		<a
 			href="/"
