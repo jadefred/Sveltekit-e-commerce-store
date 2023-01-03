@@ -13,6 +13,7 @@ declare global {
 	namespace Cypress {
 		interface Chainable {
 			loadOneProduct(value: string): Chainable<Response<IallProducts>>;
+			addToCart(id: string): Chainable<Element>;
 		}
 	}
 }
