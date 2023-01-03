@@ -16,17 +16,17 @@ describe('Product details page', () => {
 			cy.get('img').should('have.attr', 'src').and('equal', res.body.image);
 			cy.get('p').eq(0).should('contain', res.body.description);
 			cy.get('p')
-				.eq(1)
+				.eq(2)
 				.should('contain', priceFormatter.format(Math.floor(parseInt(res.body.price))));
 		});
 	});
 
 	it('Show successful message', () => {
-		cy.get('button').click();
-		cy.get('div')
-			.eq(0)
-			.should('be.visible')
-			.should('contain', 'Product has been added to the cart');
+		cy.get('[data-cy="addToCartBtn"]').trigger('mouseover').click();
+		//overrides timeout function for add to cart message
+		cy.clock();
+		cy.tick(1000);
+		cy.get('[data-cy="addToCartMsg"]').should('contain', 'Product has been added to the cart');
 	});
 });
 
