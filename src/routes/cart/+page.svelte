@@ -81,6 +81,7 @@
 						src={products.find((obj) => obj.id == selected.id)?.image}
 						alt={products.find((obj) => obj.id == selected.id)?.title}
 						class="w-16 md:w-40 h-40 object-contain"
+						data-cy="selectedImg"
 					/>
 				</div>
 				<div class="flex flex-col justify-evenly w-full">
@@ -92,31 +93,34 @@
 							<!-- selected quantity, button for increment and decrement its quantity -->
 							<button
 								on:click={() => productIncrement(selected.id)}
-								class="font-semibold text-lg hover:text-emerald-500 transition">+</button
+								class="font-semibold text-lg hover:text-emerald-500 transition"
+								data-cy="addQuantity">+</button
 							>
-							<p class="text-xl">{selected.quantity}</p>
+							<p class="text-xl" data-cy="selectedQuantity">{selected.quantity}</p>
 							<button
 								on:click={() => productDecrement(selected.id)}
-								class="font-semibold text-lg hover:text-red-500 transition">-</button
+								class="font-semibold text-lg hover:text-red-500 transition"
+								data-cy="minusQuantity">-</button
 							>
 						</div>
 						<button
 							on:click={() => deleteProduct(selected.id)}
 							class="bg-red-400 text-white px-1 py-0.5 rounded hover:bg-red-500 transition"
+							data-cy="deleteBtn"
 							>Delete</button
 						>
 					</div>
 				</div>
-				<p class="self-center font-semibold text-lg">
+				<p class="self-center font-semibold text-lg" data-cy="selectedPrice">
 					{priceFormatter.format(strToNum(selected) * selected.quantity)}
 				</p>
 			</div>
 		{/each}
 
 		<div class="w-11/12 lg:w-9/12 mx-auto pl-2 text-lg flex justify-evenly my-2">
-			<p>Total Quantity : <span class="font-semibold">{totalQuantity}</span></p>
+			<p>Total Quantity : <span class="font-semibold" data-cy="totalQuantity">{totalQuantity}</span></p>
 			<p>
-				Total Price : <span class="font-semibold">{priceFormatter.format(totalPrice)}</span>
+				Total Price : <span class="font-semibold" data-cy="totalPrice">{priceFormatter.format(totalPrice)}</span>
 			</p>
 		</div>
 
