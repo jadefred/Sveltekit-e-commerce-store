@@ -47,7 +47,7 @@
 </script>
 
 <div
-	class="w-11/12 sm:w-4/6 md:w-2/4 mx-auto text-center text-textBlack flex flex-col gap-y-5 bg-white p-5 mt-10 rounded-lg border-2 border-blue-100"
+	class="mb-20 w-11/12 sm:w-4/6 md:w-2/4 mx-auto text-center text-textBlack flex flex-col gap-y-5 bg-white p-5 mt-10 rounded-lg border-2 border-blue-100"
 >
 	<h2 class="font-bold text-2xl">{oneProduct.title}</h2>
 	<img src={oneProduct.image} alt={oneProduct.title} class="w-10/12 md:w-2/4 mx-auto" />
