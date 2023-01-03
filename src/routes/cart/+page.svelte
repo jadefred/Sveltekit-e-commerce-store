@@ -84,7 +84,7 @@
 					/>
 				</div>
 				<div class="flex flex-col justify-evenly w-full">
-					<p class="font-semibold">
+					<p class="font-semibold" data-cy="selectedTitle">
 						{products.find((obj) => obj.id == selected.id)?.title}
 					</p>
 					<div class="flex gap-x-5 md:gap-x-20 items-center pl-0.5">

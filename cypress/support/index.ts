@@ -1,5 +1,6 @@
 //Add command to the global Cypress Chainable interface
-interface IallProducts {
+export interface IallProducts {
+	find(arg0: (obj: IallProducts) => boolean): unknown;
 	id: number;
 	title: string;
 	price: string;
