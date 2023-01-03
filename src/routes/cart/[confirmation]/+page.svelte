@@ -7,7 +7,7 @@
 
 <div class="text-xl flex flex-col items-center gap-y-10 mt-20">
 	<p class="text-2xl">Thank you for your purchase</p>
-	<p>Your order ID : <span class="font-semibold">{id}</span></p>
+	<p>Your order ID : <span class="font-semibold" data-cy="confirmationId">{id}</span></p>
 	<!-- back to store button -->
 	<a
 		href="/"

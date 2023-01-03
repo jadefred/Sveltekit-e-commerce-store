@@ -60,8 +60,8 @@
 					});
 					if (serverErrorMsg) serverErrorMsg = false;
 					//redirect user to confirmation page
-					const confirmation = response.data.id
-					window.location.href = `http://localhost:5173/cart/${confirmation}`
+					const confirmation = response.data.id;
+					window.location.href = `http://localhost:5173/cart/${confirmation}`;
 				} catch (error) {
 					console.log(error);
 					serverErrorMsg = true;
@@ -83,7 +83,7 @@
 </script>
 
 <div class="flex flex-col items-center">
-	<p class="text-3xl font-semibold my-6 text-textBlack">Delivery Details</p>
+	<p class="text-3xl font-semibold my-6 text-textBlack" data-cy="formTitle">Delivery Details</p>
 
 	<!--delivery form-->
 	<form
@@ -99,7 +99,7 @@
 				bind:value={firstName}
 				class="px-2 py-1 rounded border border-blue-300 text-textBlack"
 			/>
-			<p class={`${firstNameErrorMsg ? 'text-red-500' : 'hidden'}`}>
+			<p class={`${firstNameErrorMsg ? 'text-red-500' : 'hidden'}`} data-cy="firstNameErrorMsg">
 				Please fill in your first name
 			</p>
 		</div>
@@ -113,7 +113,7 @@
 				bind:value={lastName}
 				class="px-2 py-1 rounded border border-blue-300 text-textBlack"
 			/>
-			<p class={`${lastNameErrorMsg ? 'text-red-500' : 'hidden'}`}>Please fill in your last name</p>
+			<p class={`${lastNameErrorMsg ? 'text-red-500' : 'hidden'}`} data-cy="lastNameErrorMsg">Please fill in your last name</p>
 		</div>
 
 		<!-- address -->
@@ -125,7 +125,7 @@
 				bind:value={address}
 				class="px-2 py-1 rounded border border-blue-300 text-textBlack"
 			/>
-			<p class={`${addressErrorMsg ? 'text-red-500' : 'hidden'}`}>Please fill in your address</p>
+			<p class={`${addressErrorMsg ? 'text-red-500' : 'hidden'}`} data-cy="addressErrorMsg">Please fill in your address</p>
 		</div>
 
 		<!-- email -->
@@ -137,8 +137,8 @@
 				bind:value={email}
 				class="px-2 py-1 rounded border border-blue-300 text-textBlack"
 			/>
-			<p class={`${emailErrorMsg ? 'text-red-500' : 'hidden'}`}>Please fill in your email</p>
-			<p class={`${emailInvalidMsg ? 'text-red-500' : 'hidden'}`}>Invalid email</p>
+			<p class={`${emailErrorMsg ? 'text-red-500' : 'hidden'}`} data-cy="emailErrorMsg">Please fill in your email</p>
+			<p class={`${emailInvalidMsg ? 'text-red-500' : 'hidden'}`} data-cy="emailInvalidMsg">Invalid email</p>
 		</div>
 
 		<!-- server error message if post request is failed -->
@@ -150,6 +150,7 @@
 		<input
 			type="submit"
 			value="Place Order"
+			data-cy="submitBtn"
 			class="bg-blue-500 text-white font-semibold py-2 px-5 rounded-md hover:bg-blue-800 cursor-pointer transition"
 		/>
 	</form>
